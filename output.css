@@ -1,0 +1,220 @@
+html {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    background: linear-gradient(to bottom, #ECE9E6, #FFF);
+  }
+
+
+.container {
+    overflow-x: auto; /* Adiciona uma barra de rolagem horizontal quando necessário */
+    white-space: nowrap; /* Impede que as divs de cartão sejam quebradas em várias linhas */
+}
+  
+  body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Quicksand', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+    top: -2.5rem;
+    overflow-y: hidden; /* Impede a rolagem vertical */
+    height: 100%;
+    margin: 0;
+  }
+
+
+
+  
+  .ui-card {
+    height: 20rem;
+    min-width: 12rem; /* Definindo a largura mínima */
+    margin: 0 0.5rem; /* Espaçamento entre os cartões */
+    position: relative;
+    z-index: 1;
+    transform: scale(0.6) translateY(-2rem);
+    opacity: 0;
+    cursor: pointer;
+    pointer-events: none;
+    transition: 1s;
+}
+
+
+
+/* Exemplo de imagem de fundo para a div 1 */
+.ui-card:nth-child(1) {
+    background-image: url('https://i.ibb.co/FYBqVhT/DIV-1.jpg');
+    background-size: cover; /* Garante que a imagem cubra toda a área da div */
+
+}
+
+/* Exemplo de imagem de fundo para a div 2 */
+.ui-card:nth-child(2) {
+    background-image: url('https://i.ibb.co/M5nMdLR/DIV-2.jpg');
+    background-size: cover; /* Garante que a imagem cubra toda a área da div */
+
+}
+
+/* Exemplo de imagem de fundo para a div 3 */
+.ui-card:nth-child(3) {
+    background-image: url('https://i.ibb.co/rkNG30R/DIV-3.jpg');
+    background-size: cover; /* Garante que a imagem cubra toda a área da div */
+
+}
+
+
+
+
+
+  
+  .heading {
+    text-align: center;
+    color: #E81E62;
+    margin-bottom: 3rem;
+  }
+  
+  .heading h1 {
+    margin-bottom: 0;
+  }
+  
+  .heading h6 {
+    margin: 0;
+  }
+  
+  .heading p {
+    margin: 0;
+  }
+  
+  .heading a {
+    color: #2E5266;
+    display: inline-block;
+  }
+  
+  .heading a .fab {
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: auto; /* Adicionando rolagem horizontal */
+    padding: 0 1rem; /* Espaçamento interno para evitar que os cartões fiquem muito próximos das bordas */
+    border-radius: 3px;
+    padding: auto;
+}
+
+
+  .container .ui-card:after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    bottom: -5rem;
+    filter: blur(4px);
+  }
+  .ui-card.active {
+    z-index: 3;
+    transform: scale(1) translateY(0) translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+    transition: 1s;
+}
+  
+  .container .ui-card.prev,
+  .container .ui-card.next {
+    z-index: 2;
+    transform: scale(0.8) translateY(-1rem) translateX(0);
+    opacity: 0.6;
+    pointer-events: auto;
+    transition: 1s;
+  }
+
+  /* Para WebKit (Chrome, Safari, Edge) */
+/* Remove o estilo padrão do scrollbar */
+::-webkit-scrollbar {
+    width: 8px; /* Largura do scrollbar */
+}
+
+/* Cor do fundo do scrollbar */
+::-webkit-scrollbar-track {
+    background: transparent; /* Cor do fundo */
+}
+
+/* Cor do scrollbar */
+::-webkit-scrollbar-thumb {
+    background-color: #888; /* Cor do scrollbar */
+    border-radius: 4px; /* Arredondamento das bordas */
+}
+
+/* Para Firefox */
+/* Remove o estilo padrão do scrollbar */
+* {
+    scrollbar-width: thin; /* Largura do scrollbar */
+    scrollbar-color: #888 transparent; /* Cor do scrollbar */
+}
+
+/* Cor do scrollbar */
+*::-webkit-scrollbar-thumb {
+    background-color: #888; /* Cor do scrollbar */
+}
+
+  @media (max-width: 768px) {
+    .container {
+        overflow-x: auto;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0;
+        width: 100%;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        margin: 0; /* Remova qualquer margem para garantir que o container ocupe toda a largura da tela */
+    }
+  
+    .ui-card {
+        width: calc(100% - 1rem);
+        margin: 0 0.5rem;
+    }
+    /* Para WebKit (Chrome, Safari, Edge) */
+/* Remove o estilo padrão do scrollbar */
+::-webkit-scrollbar {
+    width: 8px; /* Largura do scrollbar */
+}
+
+/* Cor do fundo do scrollbar */
+::-webkit-scrollbar-track {
+    background: transparent; /* Cor do fundo */
+}
+
+/* Cor do scrollbar */
+::-webkit-scrollbar-thumb {
+    background-color: #888; /* Cor do scrollbar */
+    border-radius: 4px; /* Arredondamento das bordas */
+}
+
+/* Para Firefox */
+/* Remove o estilo padrão do scrollbar */
+* {
+    scrollbar-width: thin; /* Largura do scrollbar */
+    scrollbar-color: #888 transparent; /* Cor do scrollbar */
+}
+
+/* Cor do scrollbar */
+*::-webkit-scrollbar-thumb {
+    background-color: #888; /* Cor do scrollbar */
+}
+
+}
+
